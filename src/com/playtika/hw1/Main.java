@@ -2,7 +2,6 @@ package com.playtika.hw1;
 
 import com.playtika.hw1.customers.Customer;
 import com.playtika.hw1.employees.*;
-import javafx.geometry.Pos;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,8 +9,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Customer customer = new Customer();
-        customer.setIdea("Create new Casino");
+        Customer.setIdea("Create new Casino");
+
 
         ProjectManager projectManager = new ProjectManager("Big", "Boss", BigDecimal.valueOf(100501));
 
@@ -28,7 +27,7 @@ public class Main {
         employees.add(juniorDeveloper);
         employees.add(tester);
 
-        projectManager.createTeam(employees, customer.getIdea());
+        projectManager.createTeam(employees, Customer.getIdea());
 
         juniorDeveloper.working(projectManager.giveTask(juniorDeveloper));
         seniorDeveloper.working(projectManager.giveTask(juniorDeveloper));
@@ -46,7 +45,6 @@ public class Main {
 
         devops.working(seniorDeveloper.getTaskDone());
         devops.working(juniorDeveloper.getTaskDone());
-
 
 
     }

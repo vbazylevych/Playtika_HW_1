@@ -1,17 +1,14 @@
 package com.playtika.hw1.employees;
 
-import com.playtika.hw1.Positions;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Random;
 
 public abstract class Employee {
     private final String lastName;
     private final String firstName;
     public Positions position;
-    private BigDecimal salary ;
-    public ArrayList<String > tasksDone = new ArrayList<>();
+    private BigDecimal salary;
+    public ArrayList<String> tasksDone = new ArrayList<>();
 
     public Employee(String lastName, String firstName, Positions position, BigDecimal salary) {
         this.lastName = lastName;
@@ -20,14 +17,18 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    public void working(String jiraNumber){
+    public void working(String jiraNumber) {
         System.out.println(firstName + " " + lastName + " done " + jiraNumber);
         tasksDone.add(jiraNumber);
     }
 
-    public void increaseOfSalary(double percentage){
-       salary = BigDecimal.valueOf(percentage * salary.doubleValue()/100);
-        System.out.println("Salary for " + firstName+ " " + lastName + " was increased!!!!!");
+    public void increaseOfSalary(double percentage) {
+        calculateNewSalary(percentage);
+        System.out.println("Salary for " + firstName + " " + lastName + " was increased!!!!!");
+    }
+
+    private void calculateNewSalary(double percentage) {
+        this.salary = BigDecimal.valueOf(percentage * salary.doubleValue() / 100);
     }
 
     public String getLastName() {

@@ -1,8 +1,5 @@
 package com.playtika.hw1.employees;
 
-import com.playtika.hw1.Positions;
-
-import javax.swing.text.Position;
 import java.math.BigDecimal;
 
 public class DevOps extends Employee{
@@ -12,6 +9,6 @@ public class DevOps extends Employee{
 
     @Override
     public void working(String jiraNumber) {
-        System.out.println(jiraNumber + "was deployed to PROD");
+        System.out.println(jiraNumber + " was deployed to PROD! DevOps need to go to smoke...");
     }
 }

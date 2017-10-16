@@ -1,13 +1,13 @@
 package com.playtika.hw1.customers;
 
-public class Customer {
-    private String idea;
+public   class Customer {
+    private static String idea ;
 
-        public String getIdea() {
-        return idea;
+    public static String getIdea() {
+        return "Bla Bla "+idea + "Bla Bla " ;
     }
 
-    public void setIdea(String idea) {
-        this.idea = idea;
+    public static void setIdea(String idea) {
+        Customer.idea = idea;
     }
 }
